@@ -46,7 +46,7 @@ class Autoload
         {
             require_once $this->mainPath.$fileName;
         } else {
-            echo "file not found: ".$fileName;
+            echo "file not found: ".$fileName."\n";
             exit;
         }
     }

@@ -3,8 +3,8 @@ namespace NextFW\Config;
 
 class Main {
     public static $global = [
-        "bundle" => "test",
-        "action" => "test/index",
+        "bundle" => "fw",
+        "action" => "main/index",
         "status" => "development"
     ];
 }

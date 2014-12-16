@@ -1,5 +1,5 @@
 <?php
-namespace NextFW\Bundles\Test\Config;
+namespace NextFW\Bundles\Fw\Config;
 
 class Preload {
     static function init($obj)

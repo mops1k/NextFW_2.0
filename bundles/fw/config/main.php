@@ -1,9 +1,9 @@
 <?php
-namespace NextFW\Bundles\Test\Config;
+namespace NextFW\Bundles\Fw\Config;
 
 class Main {
     static $tpl = array(
         "engine" => "RainTPL",
-        "base_url" => null
+        "base_url" => "/"
     );
 }

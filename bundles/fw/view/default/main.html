@@ -1,0 +1,66 @@
+{$time=microtime()}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>NextFW 2.0 Start Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">NextFW 2.0</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Начало</a></li>
+                <li><a href="#">Документация</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row well"><h1>Welcome to NextFW 2.0</h1></div>
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="nav nav-stacked" id="sidebar">
+                <li><a href="#sec0">Возможности</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-8">
+            <h2 id="sec0">Возможности</h2>
+            <p>
+                Этот фреймворк разрабатывается на чистом энтузиазме и вероятнее всего он далеко не самое оптивальное решение, но
+            прежде чем уходить предлагаем вам изучить его возможности.
+            </p>
+            <hr>
+            <p>
+                <ul>
+                    <li>Система бандлов, которая позволяет писать множество независимых приложений на одном ядре</li>
+                    <li>Консольная утилита для генерации различных бандлов, контроллеров, модулей</li>
+                    <li>Система расширений для использования сторонних решений</li>
+                    <li>RainTPL по умолчания как шаблонизатор</li>
+                    <li>RedBeanPHP 4 по умолчанию в качестве ORM</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>
+{$end=microtime()-$time}
+{$end|round,4}
+</body>
+</html>

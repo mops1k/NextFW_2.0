@@ -1,10 +1,10 @@
 <?php
-namespace NextFW\Bundles\Test\Controller;
+namespace NextFW\Bundles\Fw\Controller;
 
 use NextFW;
 use NextFW\Engine as Engine;
 
-class Test extends Engine\Controller {
+class Main extends Engine\Controller {
 
     /** @var NextFW\Bundles\Test\Module\Test */
     public $mod;
@@ -13,8 +13,6 @@ class Test extends Engine\Controller {
 
     function index($args = null)
     {
-        Engine\R::setup("mysql:host=localhost;dbname=mysql","root","ma5Haash");
-        $this->tpl->test = "someValue";
         $this->tpl->draw("main");
     }
 }
