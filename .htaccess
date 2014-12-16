@@ -1,0 +1,27 @@
+# Turn on URL rewriting
+RewriteEngine On
+
+# Installation directory
+RewriteBase /
+
+# Protect hidden files from being viewed
+<Files .*>
+  Order Deny,Allow
+	Deny From All
+</Files>
+<Files *.tpl>
+  Order Deny,Allow
+	Deny From All
+</Files>
+
+
+# Protect application and system files from being viewed
+RewriteRule ^(?:ext|bundles|engine|config)\b.* index.php/$0 [L]
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]*)/{0,1}$ /?r=$1/index [L]
+RewriteRule ^([^/]*)/([^/]*)\.html$ /?r=$1/$2 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)\.html$ /?b=$1&r=$2/$3 [L]
