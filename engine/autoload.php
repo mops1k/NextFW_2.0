@@ -46,8 +46,9 @@ class Autoload
         {
             require_once $this->mainPath.$fileName;
         } else {
-            echo "file not found: ".$fileName."\n";
-            exit;
+            throw new AutoloadException("File not found: ".$fileName);
         }
     }
 }
+
+class AutoloadException extends \Exception {}

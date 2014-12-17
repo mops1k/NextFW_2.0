@@ -23,6 +23,7 @@ abstract class Controller {
         $this->bundlePath = Route::$bundlePath;
         $this->bundleController = explode("/", Route::$request)[0];
 
+
         // running bundle preload config
         if(file_exists($this->bundlePath.DS."config".DS."preload.php"))
         {
@@ -37,4 +38,10 @@ abstract class Controller {
             $this->mod = new $this->mod;
         }
     }
+
+    function __call($m, $a) {
+        throw new \Exception('Метода '.$m.' не существует.');
+    }
 }
+
+class ControllerException extends \Exception {}

@@ -9,12 +9,21 @@ class Route {
     public static $request;
     private $reqMethod;
     public static $bundlePath;
+    private static $args = null;
 
     function __construct($request = 'main/index',$bundle = 'default')
     {
         self::$bundle = isset($_GET['b']) ? $_GET['b'] : $bundle;
         self::$request = isset($_GET['r']) ? $_GET['r'] : $request;
         $this->reqMethod = $_SERVER['REQUEST_METHOD'];
+    }
+
+    function run($request,$bundle,$args = null)
+    {
+        self::$bundle = $bundle;
+        self::$request = $request;
+        self::$args = $args;
+        $this->parse();
     }
 
     /**
@@ -46,7 +55,7 @@ class Route {
             $method .= !method_exists($class,$method."Post") ?  : "Post";
         }
 
-        $class->$method();
+        $class->$method(self::$args);
     }
 
     /**
