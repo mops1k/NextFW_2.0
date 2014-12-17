@@ -5,6 +5,7 @@ class Main {
     public static $global = [
         "bundle" => "fw",
         "action" => "main/index",
-        "status" => "development"
+        "status" => "development",
+        "base_url" => "/"
     ];
 }

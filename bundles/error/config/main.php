@@ -1,9 +1,10 @@
 <?php
 namespace NextFW\Bundles\Error\Config;
 
+use NextFW\Config as Config;
+
 class Main {
-    static $tpl = array(
-        "engine" => "RainTPL",
-        "base_url" => "/"
-    );
+    static $tpl = [
+        "engine" => "RainTPL"
+    ];
 }
