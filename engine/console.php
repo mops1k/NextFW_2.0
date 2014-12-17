@@ -4,7 +4,8 @@ namespace NextFW\Engine;
 class Console {
     /**
      * Read line from input
-     * @param string $string
+     * @param string $string Promt line before input
+     * @param string $default Default value if input is emtpy
      * @return string
      */
     function ioRead($string,$default = null) {
@@ -15,6 +16,12 @@ class Console {
         return $line;
     }
 
+    /**
+     * Read line recursive, ending reading if input is not empty
+     * @param string $string Promt line before input
+     * @param string $name
+     * @return string
+     */
     function readRecursive($string,$name = "")
     {
         $name = $this->ioRead($string);
@@ -22,30 +29,34 @@ class Console {
     }
 
     /**
-     * Write line in console
-     * @param null $string
+     * Write only 1 line in console (only 1st line will be printed)
+     * @param string $string
      */
     function writeLn($string = null) {
-        echo $string."\n";
+        $string = explode(PHP_EOL,$string);
+        echo $string[0].PHP_EOL;
     }
 
     /**
      * Write text in console
-     * @param null $text
+     * @param string $text
      */
     function write($text) {
-        echo $text."\n";
+        echo $text.PHP_EOL;
     }
 
     /**
-     * Run shell command
-     * @param string $command
+     * Run shell command (Linux/Windows)
+     * @param string $command command to run
      * @return string
      */
     function run($command)
     {
         $sh = popen($command, 'r');
-        $output = fgets($sh);
+        $output = null;
+        while($line = fgetss($sh)) {
+            $output .= $line;
+        }
         return $output;
     }
 }

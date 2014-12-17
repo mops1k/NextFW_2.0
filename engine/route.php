@@ -16,6 +16,19 @@ class Route {
         self::$bundle = isset($_GET['b']) ? $_GET['b'] : $bundle;
         self::$request = isset($_GET['r']) ? $_GET['r'] : $request;
         $this->reqMethod = $_SERVER['REQUEST_METHOD'];
+        unset($_GET['b']);
+        unset($_GET['r']);
+        $count = count($_GET);
+        if($count > 0)
+        {
+            $i = 0;
+            foreach ($_GET as $key => $value) {
+                $args[$i] = $value;
+                $args[$key] = $value;
+                ++$i;
+            }
+            self::$args = $args;
+        }
     }
 
     function run($request,$bundle,$args = null)
