@@ -5,7 +5,8 @@ Next version of framework. New features:
 * Bundles
 * 3-rd party extensions (classes)
 * Console tool
-* RainTPL as template engine
+* RainTPL or Twig or own(DLE like) template engine
 * RedBeanPHP 4 as ORM
 * PHPMailer as mail system
 * Custom error showing
+

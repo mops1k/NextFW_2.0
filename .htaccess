@@ -17,7 +17,7 @@ RewriteBase /
 # Allow any files or directories that exist to be displayed directly
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-#
+
 RewriteRule ^([^/]*)/{0,1}$ /?r=$1/index [L,QSA]
 RewriteRule ^([^/]*)/([^/]*)\.html$ /?r=$1/$2 [L,QSA]
 RewriteRule ^([^/]*)/([^/]*)/([^/]*)\.html$ /?b=$1&r=$2/$3 [L,QSA]

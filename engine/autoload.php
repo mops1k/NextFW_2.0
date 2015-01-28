@@ -28,9 +28,8 @@ class Autoload
      */
     public function autoload($class)
     {
-        $class = strtolower($class);
         if(stripos($class,$this->namespace) !== false)
-            $class = $this->namespace == null ? ltrim($class, '\\') : str_replace($this->namespace."\\","",ltrim($class, '\\'));
+            $class = $this->namespace == null ? strtolower(strtolower(ltrim($class, '\\'))) : strtolower(str_replace($this->namespace."\\","",strtolower(ltrim($class, '\\'))));
         else
             $class = "ext\\".$class;
         $fileName = null;
