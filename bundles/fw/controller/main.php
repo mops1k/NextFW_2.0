@@ -6,7 +6,7 @@ use NextFW\Engine as Engine;
 
 class Main extends Engine\Controller {
 
-    /** @var NextFW\Bundles\Test\Module\Test */
+    /** @var NextFW\Bundles\Fw\Module\Main */
     public $mod;
     /** @var \RainTpl */
     public $tpl;
