@@ -2,11 +2,10 @@ NextFW_2.0
 ==========
 
 Next version of framework. New features:
-1. Bundles
-2. 3-rd party extensions (classes)
-3. Console tool
-4. RainTPL as template engine
-5. RedBeanPHP 4 as ORM
-6. PHPMailer as mail system
-7. Custom error showing
-
+* Bundles
+* 3-rd party extensions (classes)
+* Console tool
+* RainTPL as template engine
+* RedBeanPHP 4 as ORM
+* PHPMailer as mail system
+* Custom error showing
