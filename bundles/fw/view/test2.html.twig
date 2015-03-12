@@ -1,3 +1,7 @@
 {# author: mops1k #}
 
-Hello, {{ name }}!
+{% if name is iterable %}
+    wrong name
+    {% else %}
+        {{ name }} is here
+{% endif %}

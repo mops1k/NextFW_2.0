@@ -8,11 +8,11 @@ class Main extends Engine\Controller {
 
     /** @var NextFW\Bundles\Fw\Module\Main */
     public $mod;
-    /** @var \RainTpl */
+    /** @var \Twig_Environment */
     public $tpl;
 
     function index($args = null)
     {
-        $this->tpl->draw("main");
+        echo $this->tpl->render("default/main.html");
     }
 }
