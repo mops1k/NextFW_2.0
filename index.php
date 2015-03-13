@@ -27,10 +27,9 @@ if(Main::$global['status'] == 'production') {
 }
 // end:вывод ошибок
 
-ob_start();
-register_shutdown_function(function() { $error = new Engine\Error(); $error->fatal_error_handler(); });
-set_exception_handler(["NextFW\\Engine\\Error","exception_handler"]);
-set_error_handler(["NextFW\\Engine\\Error","error_handler"]);
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
 
 $route = new Engine\Route(Config\Main::$global['action'],Config\Main::$global['bundle']);
